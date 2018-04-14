@@ -2,11 +2,12 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 
 
 
 const app = express();  
+app.use(cors());
 
 mongoose.connect('mongodb://rafel:ko6tu6li@ds227459.mlab.com:27459/gql-ninja');
 mongoose.connection.once('open', ()=>{
